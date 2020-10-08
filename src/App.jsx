@@ -157,7 +157,7 @@ function App() {
                         onPaste={onPaste}/>
                 </Grid>
                 <Grid item>
-                    <TextField fullWidth={true} label={direction === HORSE_TO_ASCII ? LABEL_TEXT: LABEL_HORSE_CODE} value={translation}/>
+                    <p>{translation}</p>
                 </Grid>
                 <Grid item container justify={"space-between"}>
                     <Hidden smDown={true}>
