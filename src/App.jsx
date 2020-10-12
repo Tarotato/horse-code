@@ -44,7 +44,7 @@ const reducer = (state, action) => {
                 return {
                     ...state,
                     text: action.value,
-                    translation: pasteTranslation,
+                    translation: pasteTranslation(action.value),
                     direction: pasteDirection,
                 }
             case OPEN_DIALOG:
@@ -154,10 +154,11 @@ function App() {
                         defaultValue={text}
                         onChange={onChange}
                         onCopy={onCopy}
-                        onPaste={onPaste}/>
+                        onPaste={onPaste}
+                        multiline={true}/>
                 </Grid>
                 <Grid item>
-                    <TextField fullWidth={true} label={direction === HORSE_TO_ASCII ? LABEL_TEXT: LABEL_HORSE_CODE} value={translation}/>
+                    <TextField fullWidth={true} label={direction === HORSE_TO_ASCII ? LABEL_TEXT: LABEL_HORSE_CODE} value={translation} multiline={true}/>
                 </Grid>
                 <Grid item container justify={"space-between"}>
                     <Hidden smDown={true}>
